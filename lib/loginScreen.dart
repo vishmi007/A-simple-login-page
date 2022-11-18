@@ -171,6 +171,34 @@ class _LoginScreenState extends State<LoginScreen>
       );
 
   }
+
+  Widget  buildSignUpBtn()
+  {
+    return GestureDetector(
+      onTap: () => print('Sign in button pressed'),
+      child: RichText(
+       text: TextSpan(
+         children: [
+           TextSpan(
+             text: 'Dont\' have an Account?',
+             style: TextStyle(
+               color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500
+             )
+           ),
+           TextSpan(
+             text: 'Sign Up',
+             style: TextStyle(
+               color: Colors.white,
+               fontSize: 18,
+               fontWeight: FontWeight.bold
+             )
+           )
+         ]
+       )
+      )
+
+    );
+  }
   Widget build(BuildContext context)
   {
     return Scaffold(
@@ -202,7 +230,7 @@ class _LoginScreenState extends State<LoginScreen>
                 ),
                     child : Column(
                         children: <Widget>[
-                          Text('Signin',
+                          Text('Sign In',
                               style: TextStyle(
                                   color : Colors.white,
                                   fontSize: 60.0,
@@ -213,8 +241,10 @@ class _LoginScreenState extends State<LoginScreen>
                           SizedBox(height: 20),
                           buildPassword(),
                           buildForgotPasswordBtn(),
-                          buildLoginBtn()
-                          
+                          buildLoginBtn(),
+                          buildSignUpBtn(),
+
+
 
                         ]
 

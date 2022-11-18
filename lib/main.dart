@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'loginScreen.dart';
+import 'registrationScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Login Page UI',
 
-      home: LoginScreen(),
+      //home: LoginScreen(),
+      home: RegistrationScreen(),
     );
   }
 }
