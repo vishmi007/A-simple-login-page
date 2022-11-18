@@ -9,121 +9,168 @@ class LoginScreen extends StatefulWidget{
   _LoginScreenState createState() => _LoginScreenState();
   }
 
+
+
+
+
+
+class _LoginScreenState extends State<LoginScreen>
+{
+  /*Method Name  : buildForgotpasswordButton
+    Parameters   : None
+    Purpose      : To Design the forgot password button.
+  */
+  Widget buildForgotPasswordBtn()
+  {
+    return Container(
+        alignment: Alignment.centerRight,
+        //New button types in Flutter are textButton and OutlinedButton
+        child: OutlinedButton(
+            onPressed: () => print("Want to reset your password?"),
+            child:Text(
+                'Forgot Password?',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
+                )
+            )
+
+        )
+    );
+  }
+
   /*Method Name  : buildEmail
     Parameters   : None
     Purpose      : To Design the email text box.
   */
-Widget buildEmail()
-{
-  return Column(
-    children: <Widget>[
-    Text(
-      'Email',style: TextStyle(
-      color: Colors.white,
-      fontSize: 16,
-      fontWeight: FontWeight.bold,
+  Widget buildEmail()
+  {
+    return Column(
+        children: <Widget>[
+          Text(
+              'Email',style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
 
-    )
-    ),
-      SizedBox(height: 10),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black54,
-                  blurRadius: 6,
-              offset:Offset(0,2)
-            )
-          ]
-        ),
-        height: 60,
-        child: TextField(
-          //Validating the user input
-          keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-            color:Colors.black54
-          ),
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.only(top:14),
-            prefixIcon: Icon(
-              Icons.email,
-              color: Color(0XFFAB47BC)
-            ),
-            hintText: 'Email',
-            hintStyle: TextStyle(
-              color: Colors.black54
-            )
           )
-        )
-      )
-    ]
+          ),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black54,
+                        blurRadius: 6,
+                        offset:Offset(0,2)
+                    )
+                  ]
+              ),
+              height: 60,
+              child: TextField(
+                //Validating the user input
+                  keyboardType: TextInputType.emailAddress,
+                  style: TextStyle(
+                      color:Colors.black54
+                  ),
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(top:14),
+                      prefixIcon: Icon(
+                          Icons.email,
+                          color: Color(0XFFAB47BC)
+                      ),
+                      hintText: 'Email',
+                      hintStyle: TextStyle(
+                          color: Colors.black54
+                      )
+                  )
+              )
+          )
+        ]
 
-  );
-}
+    );
+  }
 
 /*Method Name  : buildPassword
     Parameters   : None
     Purpose      : To Design the Password text box.
   */
-Widget buildPassword()
-{
-  return Column(
-      children: <Widget>[
-        Text(
-            'Password',style: TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
+  Widget buildPassword()
+  {
+    return Column(
+        children: <Widget>[
+          Text(
+              'Password',style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
 
-        )
-        ),
-        SizedBox(height: 10),
-        Container(
-            alignment: Alignment.centerLeft,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black54,
-                      blurRadius: 6,
-                      offset:Offset(0,2)
-                  )
-                ]
-            ),
-            height: 60,
-            child: TextField(
-              //Validating the user input
-                obscureText: true,
-                style: TextStyle(
-                    color:Colors.black54
-                ),
-                decoration: InputDecoration(
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.only(top:14),
-                    prefixIcon: Icon(
-                        Icons.lock,
-                        color: Color(0XFFAB47BC)
-                    ),
-                    hintText: 'Password',
-                    hintStyle: TextStyle(
-                        color: Colors.black54
+          )
+          ),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black54,
+                        blurRadius: 6,
+                        offset:Offset(0,2)
                     )
-                )
-            )
-        )
-      ]
+                  ]
+              ),
+              height: 60,
+              child: TextField(
+                //Validating the user input
+                  obscureText: true,
+                  style: TextStyle(
+                      color:Colors.black54
+                  ),
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(top:14),
+                      prefixIcon: Icon(
+                          Icons.lock,
+                          color: Color(0XFFAB47BC)
+                      ),
+                      hintText: 'Password',
+                      hintStyle: TextStyle(
+                          color: Colors.black54
+                      )
+                  )
+              )
+          )
+        ]
 
-  );
-}
+    );
+  }
+
+  /*Method Name  : buildPassword
+    Parameters   : None
+    Purpose      : To Design the Login button.
+  */
+
+  Widget buildLoginBtn()
+  {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 25),
+      width: double.infinity,
+      child: OutlinedButton(
+        child: Text('LOGIN', style:TextStyle(color: Color(0XFF7B1FA2),
+        fontSize: 18,fontWeight: FontWeight.bold) ) ,
+        onPressed: () => print('Login Button Pressed'),
 
 
-class _LoginScreenState extends State<LoginScreen>
-{
+      ),
+      );
+
+  }
   Widget build(BuildContext context)
   {
     return Scaffold(
@@ -155,7 +202,7 @@ class _LoginScreenState extends State<LoginScreen>
                 ),
                     child : Column(
                         children: <Widget>[
-                          Text('Login',
+                          Text('Signin',
                               style: TextStyle(
                                   color : Colors.white,
                                   fontSize: 60.0,
@@ -165,6 +212,9 @@ class _LoginScreenState extends State<LoginScreen>
                           buildEmail(),
                           SizedBox(height: 20),
                           buildPassword(),
+                          buildForgotPasswordBtn(),
+                          buildLoginBtn()
+                          
 
                         ]
 
